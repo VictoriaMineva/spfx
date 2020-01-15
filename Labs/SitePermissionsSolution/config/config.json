@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "list-site-permissions-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/listSitePermissions/ListSitePermissionsWebPart.js",
+          "manifest": "./src/webparts/listSitePermissions/ListSitePermissionsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ListSitePermissionsWebPartStrings": "lib/webparts/listSitePermissions/loc/{locale}.js"
+  }
+}

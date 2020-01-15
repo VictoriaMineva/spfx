@@ -1,0 +1,32 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.listSitePermissions {
+  .container {
+    margin: 0px auto;
+  }
+
+  .row {
+    padding: 3px;
+    cursor: pointer;
+  }
+
+  .element {
+    margin-right: 2px;
+    padding: 8px 10px 2px;
+    color: white;
+    min-height: 35px;
+    vertical-align: middle;
+  }
+
+  .inline {
+    margin-right: 5px;
+    padding: 2px 5px;
+    border: 1px dashed white;
+  }
+
+  .icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}
