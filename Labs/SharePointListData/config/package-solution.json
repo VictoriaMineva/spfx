@@ -4,7 +4,7 @@
     "name": "share-point-list-data-client-side-solution",
     "id": "c8c94914-92e0-4f1b-99ca-1cab13c05be6",
     "version": "1.0.0.0",
-    "includeClientSideAssets": true,
+    "includeClientSideAssets": false,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false
   },

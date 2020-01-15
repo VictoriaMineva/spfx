@@ -7,6 +7,7 @@ import { BaseClientSideWebPart,
 import { escape } from '@microsoft/sp-lodash-subset';
 
 import { ISPList } from '../../interfaces/ISPList';
+import { ISPListItem } from '../../interfaces/ISPListItem';
 import { ISPDataService } from '../../interfaces/ISPDataService';
 import MockDataService from '../../services/MockDataService';
 import SharePointDataService from '../../services/SharePointDataService';
@@ -52,10 +53,34 @@ export default class ListDataWebPart extends BaseClientSideWebPart <IListDataWeb
   private getListDropdownOptions(listData: ISPList[]): IPropertyPaneDropdownOption[] {
     var ddOptions: IPropertyPaneDropdownOption[] = [];
     listData.forEach((value) => {
-      ddOptions.push({key: value.id, text: value.name})
+      ddOptions.push({key: value.id, text: value.name});
     });
 
     return ddOptions;
+  }
+
+  private loadListItems() {
+    this.DataService
+    .getListItems(this.properties.ListID, this.properties.MaxItems)
+    .then((listItemData: ISPListItem[]) => {
+      this.renderListItems(listItemData);
+    });
+  }
+
+  private renderListItems(listItemData: ISPListItem[]) {
+    var html: string = '';
+    listItemData.forEach((item: ISPListItem) => {
+      html += `
+        <div class="${styles.listItem}">
+          <span class="ms-font-1">${item.id}</span>
+          &nbsp;-&nbsp;
+          <span class="ms-font-1">${item.title}</span>
+        </div>
+      `;
+    });
+
+    const listContainer: Element = this.domElement.querySelector('#spListItemContainer');
+    listContainer.innerHTML = html;
   }
 
   // private getLists(): ISPList[] {
@@ -78,24 +103,26 @@ export default class ListDataWebPart extends BaseClientSideWebPart <IListDataWeb
   public render(): void {
     this.domElement.innerHTML = `
       <div class="${ styles.listData }">
-    <div class="${ styles.container }">
-      <div class="${ styles.row }">
-        <div class="${ styles.column }">
-          <span class="${ styles.title }">Welcome to SharePoint!</span>
-  <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
-    <p class="${ styles.description }">${escape(this.properties.ListID)}</p>
-      <a href="https://aka.ms/spfx" class="${ styles.button }">
-        <span class="${ styles.label }">Learn more</span>
-          </a>
+        <div class="${ styles.container }">
+          <div class="${ styles.row }">
+            <div class="${ styles.column }">
+              <div id="spListItemContainer"></div>
+            </div>
           </div>
-          </div>
-          </div>
-          </div>`;
+        </div>
+      </div>`;
+
+      this.loadListItems();
   }
 
   protected get dataVersion(): Version {
-  return Version.parse('1.0');
-}
+    return Version.parse('1.0');
+  }
+
+  protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {
+    super.onPropertyPaneFieldChanged(propertyPath, oldValue, newValue);
+    this.loadListItems();
+  }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
   return {

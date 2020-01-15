@@ -1,4 +1,5 @@
 import {ISPList} from '../interfaces/ISPList';
+import {ISPListItem} from '../interfaces/ISPListItem';
 import {ISPDataService} from '../interfaces/ISPDataService';
 
 export default class MockDataService implements ISPDataService {
@@ -7,6 +8,16 @@ export default class MockDataService implements ISPDataService {
             { id: "1", name: "Announcements" },
             { id: "2", name: "Calendar" }
         ];
+        return Promise.resolve(mockData);
+    }
+
+    public getListItems(ListID: string, MaxItems: number): Promise<ISPListItem[]> {
+        var mockData: ISPListItem[] = [];
+        
+        for (let i = 0, max = MaxItems; i < max; i += 1) {
+            mockData.push({ id: i, title: "Item" + 1 });
+        }
+
         return Promise.resolve(mockData);
     }
 }
