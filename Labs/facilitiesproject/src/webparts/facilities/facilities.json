@@ -1,0 +1,105 @@
+[
+  {
+    "key": "burien",
+    "name": "Burien",
+    "description": "West US",
+    "status": "yellow",
+    "issues": [
+      {
+        "id": 133,
+        "title": "Cooling system backups offline."
+      }
+    ],
+    "lat": 47.468333,
+    "long": -122.345556,
+    "facilitiesManagerName": "Tommy Vanhee",
+    "facilitiesManagerAlias": "tommy"
+
+  },
+  {
+    "key": "staunton",
+    "name": "Staunton",
+    "description": "East US",
+    "status": "red",
+    "issues": [
+      {
+        "id": 133,
+        "title": "Power outage."
+      }
+    ],
+    "lat": 38.158056,
+    "long": -79.076389,
+    "facilitiesManagerName": "Lieven Iliano",
+    "facilitiesManagerAlias": "lieven"
+  },
+  {
+    "key": "maastricht",
+    "name": "Maastricht",
+    "description": "West Europe",
+    "status": "green",
+    "lat": 50.85,
+    "long": 5.683333,
+    "facilitiesManagerName": "Robrecht Van Caenegem",
+    "facilitiesManagerAlias": "robrecht"
+  },
+  {
+    "key": "sanIsidro",
+    "name": "San Isidro",
+    "description": "Central America",
+    "status": "green",
+    "lat": 9.375556,
+    "long": -83.705278,
+    "facilitiesManagerName": "Lieven Iliano",
+    "facilitiesManagerAlias": "lieven"
+  },
+  {
+    "key": "manaus",
+    "name": "Manaus",
+    "description": "South America",
+    "status": "green",
+    "lat": -3.1,
+    "long": -60.016667,
+    "facilitiesManagerName": "Lieven Iliano",
+    "facilitiesManagerAlias": "lieven"
+  },
+  {
+    "key": "abuja",
+    "name": "Abuja",
+    "description": "Africa",
+    "status": "green",
+    "lat": 9.066667,
+    "long": 7.483333,
+    "facilitiesManagerName": "Robrecht Van Caenegem",
+    "facilitiesManagerAlias": "robrecht"
+  },
+  {
+    "key": "hyderabad",
+    "name": "Hyderabad",
+    "description": "South Asia",
+    "status": "green",
+    "lat": 17.37,
+    "long": 78.48,
+    "facilitiesManagerName": "Robrecht Van Caenegem",
+    "facilitiesManagerAlias": "robrecht"
+  },
+  {
+    "key": "kyoto",
+    "name": "Kyoto",
+    "description": "East Asia",
+    "status": "green",
+    "lat": 35.011667,
+    "long": 135.768333,
+    "facilitiesManagerName": "Tommy Vanhee",
+    "facilitiesManagerAlias": "tommy"
+  },
+  {
+    "key": "melbourne",
+    "name": "Melbourne",
+    "description": "Australia",
+    "status": "green",
+    "lat": -37.813611,
+    "long": 144.963056,
+    "facilitiesManagerName": "Tommy Vanhee",
+    "facilitiesManagerAlias": "tommy"
+  }
+]

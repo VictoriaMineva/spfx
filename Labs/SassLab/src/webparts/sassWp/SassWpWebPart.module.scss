@@ -1,0 +1,92 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+$accentColor: #ffca60;
+$bgColor: #f4f4f4;
+$cardColor: #FFFFFF;
+$fontColor: #3a3938;
+
+//Font 
+$defaultFont: "Segoe UI WestEuropean", "Segoe UI", -apple-system,BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-seriff;
+$defaultFontSize: 20px;
+
+
+//mixins
+@mixin back-stretch($backgroundColor: $accentColor) {
+  background: {
+    position: 50%;
+    color: $backgroundColor;
+    size: cover;
+  }
+}
+
+.sassWp {
+  color: $fontColor;
+  width: 100%;
+
+  font: {
+    family: $defaultFont;
+    size: $defaultFontSize;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .sites {
+    margin-right: 20px;
+
+    .site {
+      background-color: $cardColor;
+      float: left;
+      height: 240px;
+      width: 200px;
+      margin: {
+        left: 20px;
+        top: 20px;
+        bottom: 20px;
+        right: 0;
+      }
+
+      &:hover {
+        background-color: lighten($accentColor, $amount: 20);
+        transition: {
+          property: background-color;
+          duration: 0.3s;
+        }
+
+        .title {
+          color: darken($accentColor, 40);
+        }
+      }
+
+      .title {
+        height: 60px;
+        overflow: hidden;
+        padding: 20px 10px;
+        color: $accentColor;
+      }
+
+      .logo {
+        height: 80px;
+        width: 200px;
+        border: 0px solid $accentColor;
+        border-bottom-width: 5px;
+        @include back-stretch($fontColor);
+      }
+
+      .subtitle {
+        @extend .title;
+        font: {
+          size: 60%;
+          style: italic;
+        }
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+.clearfix {
+  clear: both;
+}
