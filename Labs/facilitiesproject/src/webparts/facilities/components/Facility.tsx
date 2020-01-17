@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styles from './Facilities.module.scss';
 import { DocumentCard, DocumentCardPreview, DocumentCardActivity, DocumentCardTitle } from 'office-ui-fabric-react';
 
 export interface IFacilityProps {
@@ -20,7 +21,7 @@ export default class Facility extends React.Component<IFacilityProps, {}> {
         return (
             <DocumentCard>
                 <DocumentCardTitle title={this.props.item ? this.props.item.name : ''} />
-                <DocumentCardPreview previewImages={imgSrc} />
+                <DocumentCardPreview previewImages={imgSrc} className={styles.facilityImg} />
                 <DocumentCardActivity activity='Facility Manager' people={ppl} />
             </DocumentCard>
         );
