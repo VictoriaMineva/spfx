@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="GroupConvNotifier"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="29d4adcc-9855-4f4c-ba5c-208069d26588"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

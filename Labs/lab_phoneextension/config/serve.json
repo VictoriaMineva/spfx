@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://victoriamineva.sharepoint.com/sites/lab15/Lists/Contacts/AllItems.aspx",
+      "fieldCustomizers": {
+        "WorkPhone": {
+          "id": "0e69dd3e-065e-4fe7-9d68-6cfe4033abd6"
+        }
+      }
+    },
+    "phoneLauncher": {
+      "pageUrl": "https://victoriamineva.sharepoint.com/sites/lab15/Lists/Contacts/AllItems.aspx",
+      "fieldCustomizers": {
+        "WorkPhone": {
+          "id": "0e69dd3e-065e-4fe7-9d68-6cfe4033abd6"
+        }
+      }
+    },
+    "phoneCommand": {
+      "pageUrl": "https://victoriamineva.sharepoint.com/sites/lab15/Lists/Contacts/AllItems.aspx",
+      "customActions": {
+        "80d9502f-7d94-4265-8c00-f2e57909e214": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "phone-launcher-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/phoneLauncher/PhoneLauncherFieldCustomizer.js",
+          "manifest": "./src/extensions/phoneLauncher/PhoneLauncherFieldCustomizer.manifest.json"
+        }
+      ]
+    },
+    "phone-command-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/phoneCommand/PhoneCommandCommandSet.js",
+          "manifest": "./src/extensions/phoneCommand/PhoneCommandCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PhoneLauncherFieldCustomizerStrings": "lib/extensions/phoneLauncher/loc/{locale}.js",
+    "PhoneCommandCommandSetStrings": "lib/extensions/phoneCommand/loc/{locale}.js"
+  }
+}
